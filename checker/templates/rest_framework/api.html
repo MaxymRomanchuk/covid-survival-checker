@@ -1,0 +1,15 @@
+{% extends "rest_framework/base.html" %}
+{% load static %}
+
+{% block style %}
+{{ block.super }}
+<link rel="shortcut icon" type="image/png" href="{% static 'Favicon.png'%}" />
+{% endblock %}
+
+{% block title %} COVID-19 survival checker API {% endblock %}
+
+{% block branding %}
+    <a class="navbar-brand" rel="nofollow" href="">
+        COVID-19 survival checker API
+    </a>
+{% endblock %}
