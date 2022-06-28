@@ -19,15 +19,15 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', schema_view.with_ui('swagger', cache_timeout=0)),
-    path('model/svc', SVCView.as_view({'post': 'predict'})),
-    path('model/xgb', XGBClassifierView.as_view({'post': 'predict'})),
-    path('model/gaussian-nb', GaussianNBView.as_view({'post': 'predict'})),
-    path('model/voting', VotingClassifierView.as_view({'post': 'predict'})),
-    path('model/knn', KNeighboursClassifierView.as_view({'post': 'predict'})),
-    path('model/ada-boost', AdaBoostClassifierView.as_view({'post': 'predict'})),
-    path('model/extra-trees', ExtraTreesClassifierView.as_view({'post': 'predict'})),
-    path('model/decision-tree', DecisionTreeClassifierView.as_view({'post': 'predict'})),
-    path('model/random-forest', RandomForestClassifierView.as_view({'post': 'predict'})),
-    path('model/logistic-regression', LogisticRegressionView.as_view({'post': 'predict'})),
+    path('model/svc', SVCView.as_view({'post': 'predict_svc'})),
+    path('model/xgb', XGBClassifierView.as_view({'post': 'predict_xgb'})),
+    path('model/gaussian-nb', GaussianNBView.as_view({'post': 'predict_bayes'})),
+    path('model/voting', VotingClassifierView.as_view({'post': 'predict_vote'})),
+    path('model/knn', KNeighboursClassifierView.as_view({'post': 'predict_knn'})),
+    path('model/ada-boost', AdaBoostClassifierView.as_view({'post': 'predict_ada'})),
+    path('model/extra-trees', ExtraTreesClassifierView.as_view({'post': 'predict_trees'})),
+    path('model/decision-tree', DecisionTreeClassifierView.as_view({'post': 'predict_tree'})),
+    path('model/random-forest', RandomForestClassifierView.as_view({'post': 'predict_forest'})),
+    path('model/logistic-regression', LogisticRegressionView.as_view({'post': 'predict_regression'})),
     path('models/multiple', MultipleModelsView.as_view({'post': 'predict'}))
 ]

@@ -18,7 +18,7 @@ class LogisticRegressionView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_regression(self, request, **kwargs):
         '''
         Прогнозування за допомогою Логістичної регресії
 
@@ -46,7 +46,7 @@ class AdaBoostClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_ada(self, request, **kwargs):
         '''
         Прогнозування за допомогою моделі Адаптивного бустингу
 
@@ -73,7 +73,7 @@ class DecisionTreeClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_tree(self, request, **kwargs):
         '''
         Прогнозування за допомогою Дерева рішень
 
@@ -100,7 +100,7 @@ class ExtraTreesClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_trees(self, request, **kwargs):
         '''
         Прогнозування за допомогою моделі Екстра дерев
 
@@ -127,7 +127,7 @@ class GaussianNBView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_bayes(self, request, **kwargs):
         '''
         Прогнозування за допомогою Гаусового наївного байєсівського класифікатора
 
@@ -154,7 +154,7 @@ class KNeighboursClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_knn(self, request, **kwargs):
         '''
         Прогнозування за допомогою моделі К Найближчих сусідів
 
@@ -181,7 +181,7 @@ class RandomForestClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_forest(self, request, **kwargs):
         '''
         Прогнозування за допомогою моделі Випадкового лісу
 
@@ -208,7 +208,7 @@ class SVCView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_svc(self, request, **kwargs):
         '''
         Прогнозування за допомогою методі Опорних векторів
 
@@ -235,7 +235,7 @@ class VotingClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_vote(self, request, **kwargs):
         '''
         Прогнозування за допомогою Голосуючого ансамблю моделей
 
@@ -262,7 +262,7 @@ class XGBClassifierView(ViewSet):
 
     @swagger_auto_schema(method='post', request_body=BloodTestSerializer, responses={ 200: PredictionResultSerializer} )
     @action(detail=True, methods=['post'])
-    def predict(self, request, **kwargs):
+    def predict_xgb(self, request, **kwargs):
         '''
         Прогнозування за допомогою моделі екстримального бустингу
 
